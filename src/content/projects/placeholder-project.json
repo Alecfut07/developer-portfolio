@@ -1,0 +1,23 @@
+{
+  "slug": "coming-soon-portfolio-starter",
+  "title": "Portfolio Starter Case Study",
+  "tagline": "A placeholder showing your future project format.",
+  "summary": "Structured to demonstrate how future projects will be documented.",
+  "status": "in-progress",
+  "featured": true,
+  "publishedAt": "2026-04-22",
+  "coverImage": "/images/projects/coming-soon-portfolio-starter/cover.jpg",
+  "techStack": ["Next.js", "JavaScript", "Tailwind CSS", "Vercel"],
+  "problem": "Need a scalable professional portfolio architecture.",
+  "solution": "Built a reusable project-driven content system using JSON + dynamic routes.",
+  "challenges": [
+    "Designing for future growth while keeping v1 simple",
+    "Making project pages recruiter-friendly and fast to scan"
+  ],
+  "results": [
+    "New projects can be added by dropping JSON files",
+    "SEO-ready case-study pages generated statically"
+  ],
+  "liveUrl": "",
+  "githubUrl": ""
+}

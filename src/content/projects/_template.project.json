@@ -1,0 +1,17 @@
+{
+  "slug": "project-slug",
+  "title": "Project Title",
+  "tagline": "1-line recruiter-friendly description",
+  "summary": "What it is and why it matters.",
+  "status": "in-progress",
+  "featured": false,
+  "publishedAt": "2026-04-22",
+  "coverImage": "/images/projects/project-slug/cover.jpg",
+  "techStack": ["Next.js", "JavaScript", "Tailwind CSS"],
+  "problem": "What problem did this solve?",
+  "solution": "How you solved it.",
+  "challenges": ["Challenge 1", "Challenge 2"],
+  "results": ["Result 1", "Result 2"],
+  "liveUrl": "",
+  "githubUrl": ""
+}
