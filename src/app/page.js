@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { GlobeIcon, CodeIcon, BriefcaseIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -9,7 +10,12 @@ import { AnimatedSection } from "@/components/animated-section";
 import { EnhancedProfile } from "@/components/enhanced-profile";
 import { CredentialsSection } from "@/components/credentials-section";
 import { PortfolioHeader } from "@/components/portfolio-header";
-import { getExperienceInfo, getTechnicalSkillsInfo } from "@/lib/data";
+import {
+  getExperienceInfo,
+  getTechnicalSkillsInfo,
+  getPersonalInfo,
+} from "@/lib/data";
+
 const SkillTagComponent = ({ children }) => {
   return (
     <div className="px-2 py-1 bg-zinc-800 rounded-full text-xs font-medium text-zinc-400">
@@ -17,10 +23,13 @@ const SkillTagComponent = ({ children }) => {
     </div>
   );
 };
+
 export default function Home() {
   const projects = getAllProjects();
   const experienceInfo = getExperienceInfo();
   const technicalSkills = getTechnicalSkillsInfo();
+  const personalInfo = getPersonalInfo();
+
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid Pattern */}
@@ -163,8 +172,9 @@ export default function Home() {
                       variant="ghost"
                       size="sm"
                       className="text-xs sm:text-sm px-2 sm:px-3"
+                      asChild
                     >
-                      View All
+                      <Link href="/projects">View All</Link>
                     </Button>
                   </div>
 
@@ -196,7 +206,10 @@ export default function Home() {
           delay={500}
           className="mt-8 sm:mt-12 py-4 sm:py-6 text-center text-xs sm:text-sm text-zinc-500"
         >
-          <p>© {new Date().getFullYear()} Jane Doe. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {personalInfo.name}. All rights
+            reserved.
+          </p>
         </AnimatedSection>
       </div>
 
