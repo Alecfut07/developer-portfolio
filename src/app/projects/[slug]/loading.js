@@ -1,9 +1,12 @@
 export default function LoadingProject() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-12">
-      <div className="h-8 w-2/3 animate-pulse rounded bg-muted" />
-      <div className="mt-4 h-5 w-full animate-pulse rounded bg-muted" />
-      <div className="mt-2 h-5 w-5/6 animate-pulse rounded bg-muted" />
+    <main className="min-h-screen bg-black text-white p-6">
+      <div className="max-w-5xl mx-auto animate-pulse space-y-4">
+        <div className="h-8 w-56 bg-zinc-800 rounded" />
+        <div className="h-64 bg-zinc-800 rounded" />
+        <div className="h-4 w-full bg-zinc-800 rounded" />
+        <div className="h-4 w-5/6 bg-zinc-800 rounded" />
+      </div>
     </main>
   );
 }
