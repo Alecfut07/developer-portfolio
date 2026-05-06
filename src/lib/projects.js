@@ -1,209 +1,117 @@
 const projects = [
   {
     id: 1,
-    slug: "job-finder-app",
-    title: "Job Finder App",
-    category: "Mobile App",
+    slug: "gamezone",
+    title: "GameZone - Full-Stack E-commerce Platform",
+    category: "Full-Stack, E-commerce",
     shortDescription:
-      "A modern job search application designed to connect job seekers with employers efficiently.",
+      "A React and .NET Core e-commerce platform for video games with Stripe payments and Redis caching.",
     description: [
-      "The Job Finder App is a comprehensive mobile application designed to streamline the job search process. It provides an intuitive interface for job seekers to discover opportunities that match their skills and preferences.",
-      "The app features a smart matching algorithm that analyzes user profiles and job requirements to suggest the most relevant positions. Users can easily filter jobs by location, industry, experience level, and salary range.",
-      "For employers, the platform offers tools to post job listings, review applications, and communicate with potential candidates directly through the app.",
+      "GameZone is a full-stack e-commerce solution for gaming products, structured with clear separation of concerns and a repository-style data access pattern on the backend.",
+      "The platform supports authenticated users, catalog browsing, cart and checkout flows, and integrations for payments and transactional email.",
+      "Deployment is containerized with CI automation so environments stay consistent from development through production.",
     ],
     features: [
-      "Personalized job recommendations based on user skills and preferences",
-      "Real-time notifications for new job postings and application updates",
-      "In-app messaging system for direct communication between employers and candidates",
-      "Resume builder with templates and formatting tools",
-      "Interview scheduling and calendar integration",
-      "Detailed analytics for job seekers to track their application progress",
+      "User authentication and role-based access",
+      "Shopping cart and order management",
+      "Stripe integration for payments and tax calculation",
+      "SendGrid for order confirmation emails",
+      "Dockerized deployment with GitHub Actions",
     ],
     technologies: [
-      "React Native",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "AWS",
-      "Firebase",
+      "React",
+      ".NET Core",
+      "SQL Server",
+      "Redis",
+      "Docker",
+      "GitHub Actions",
+      "Bootstrap",
     ],
-    coverImage: "/job-finder-cover.png",
-    thumbnailImage: "/modern-finance-app.png",
+    coverImage: "/images/gamezone-cover.jpg",
+    thumbnailImage: "/images/gamezone-cover.jpg",
     gallery: [
       {
-        url: "/job-finder-screen1.png",
-        caption: "Home Screen with Job Recommendations",
+        url: "/images/gamezone-cover.jpg",
+        caption: "Storefront / catalog",
       },
-      { url: "/job-finder-screen2.png", caption: "Job Detail View" },
-      { url: "/job-finder-screen3.png", caption: "User Profile and Skills" },
       {
-        url: "/job-finder-screen4.png",
-        caption: "Application Tracking Dashboard",
+        url: "/images/gamezone-cart.jpg",
+        caption: "Cart / checkout flow",
       },
     ],
-    timeline: "3 months (Q2 2023)",
-    role: "Lead Product Designer",
-    liveUrl: "https://example.com/job-finder",
-    githubUrl: "https://github.com/example/job-finder",
+    timeline: "-",
+    role: "Full-stack developer",
+    client: "Personal project",
+    githubUrl: "https://github.com/Alecfut07/gamezone-web",
     relatedProjects: [
       {
-        slug: "finance-dashboard",
-        title: "Finance Dashboard",
-        category: "Web Application",
-        image: "/modern-finance-overview.png",
-      },
-      {
-        slug: "ecommerce-redesign",
-        title: "E-Commerce Redesign",
-        category: "UX Case Study",
-        image: "/modern-apparel-storefront.png",
+        slug: "Pacific",
+        title: "Pacific - Industrial Products Store",
+        category: "Frontend, E-commerce",
+        image: "/images/pacific-cover.jpg",
       },
     ],
   },
   {
     id: 2,
-    slug: "finance-dashboard",
-    title: "Finance Dashboard",
-    category: "Web Application",
+    slug: "pacific",
+    title: "Pacific - Industrial Products Store",
+    category: "Frontend, E-commerce",
     shortDescription:
-      "A comprehensive financial management dashboard for tracking investments, expenses, and financial goals.",
+      "A Vite + Material Tailwind site for chemical and safety equipment with quote generation.",
     description: [
-      "The Finance Dashboard is a powerful web application designed to help users manage their personal finances in one centralized location. It provides real-time insights into spending patterns, investment performance, and progress toward financial goals.",
-      "The dashboard features interactive charts and visualizations that make complex financial data easy to understand at a glance. Users can connect multiple accounts, categorize transactions automatically, and receive personalized recommendations to improve their financial health.",
-      "The application was designed with a focus on security, using bank-level encryption and authentication protocols to protect sensitive financial information.",
+      "Pacific is an industrial e-commerce experience focused on chemical and safety equipment, with flows for browsing, cart management, and generating downloadable quotes.",
+      "The app includes authenticated areas and an admin-oriented workflow for inventory and quote handling.",
+      "The UI is built with Material Tailwind and responsive layouts, containerized for consistent deployment.",
     ],
     features: [
-      "Account aggregation from multiple financial institutions",
-      "Automated transaction categorization and tagging",
-      "Budget creation and expense tracking",
-      "Investment portfolio analysis and performance metrics",
-      "Goal setting with progress tracking",
-      "Customizable reports and data exports",
-      "Financial insights and recommendations",
+      "User registration and login",
+      "Shopping cart and downloadable PDF quotes",
+      "Admin dashboard for inventory and quote management",
+      "Responsive layout with Material Tailwind CSS",
+      "Docker-based deployment",
     ],
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Chart.js",
-      "Plaid API",
-      "PostgreSQL",
-      "Vercel",
-    ],
-    coverImage: "/finance-dashboard-cover.png",
-    thumbnailImage: "/modern-finance-overview.png",
+    technologies: ["Vite", "JavaScript", "Material Tailwind", "Docker"],
+    coverImage: "/images/pacific-cover.jpg",
     gallery: [
       {
-        url: "/finance-dashboard-screen1.png",
-        caption: "Main Dashboard Overview",
-      },
-      { url: "/finance-dashboard-screen2.png", caption: "Expense Analysis" },
-      {
-        url: "/finance-dashboard-screen3.png",
-        caption: "Investment Portfolio",
+        url: "/images/pacific-cover.jpg",
+        caption: "Storefront",
       },
       {
-        url: "/finance-dashboard-screen4.png",
-        caption: "Financial Goals Tracker",
+        url: "/images/pacific-admin.jpg",
+        caption: "Admin / management UI",
       },
     ],
-    timeline: "4 months (Q3-Q4 2022)",
-    role: "UX/UI Designer & Frontend Developer",
-    liveUrl: "https://example.com/finance-dashboard",
-    githubUrl: "https://github.com/example/finance-dashboard",
+    timeline: "-",
+    role: "Frontend developer",
+    client: "-",
+    githubUrl: "https://github.com/Alecfut07/pacific-frontend",
     relatedProjects: [
       {
-        slug: "job-finder-app",
-        title: "Job Finder App",
-        category: "Mobile App",
-        image: "/modern-finance-app.png",
-      },
-      {
-        slug: "ecommerce-redesign",
-        title: "E-Commerce Redesign",
-        category: "UX Case Study",
-        image: "/modern-apparel-storefront.png",
-      },
-    ],
-  },
-  {
-    id: 3,
-    slug: "ecommerce-redesign",
-    title: "E-Commerce Redesign",
-    category: "UX Case Study",
-    shortDescription:
-      "A complete redesign of an e-commerce platform focused on improving user experience and conversion rates.",
-    description: [
-      "This project involved a comprehensive redesign of an established e-commerce platform that was struggling with user engagement and conversion rates. The goal was to create a more intuitive, visually appealing shopping experience that would drive sales and customer satisfaction.",
-      "The redesign process began with extensive user research, including interviews, surveys, and usability testing of the existing platform. This research revealed key pain points in the customer journey, such as a complicated checkout process and difficulty finding products.",
-      "Based on these insights, I developed a new information architecture and user flow that simplified navigation and streamlined the purchase process. The visual design was updated with a clean, modern aesthetic that highlighted product imagery and created a consistent brand experience across all touchpoints.",
-    ],
-    features: [
-      "Simplified product navigation and filtering system",
-      "Redesigned product detail pages with enhanced imagery and information",
-      "Streamlined checkout process reducing steps by 40%",
-      "Personalized product recommendations based on browsing history",
-      "Mobile-first responsive design",
-      "Improved search functionality with predictive suggestions",
-      "Enhanced wishlist and saved items functionality",
-    ],
-    technologies: [
-      "Figma",
-      "Adobe XD",
-      "HTML/CSS",
-      "JavaScript",
-      "Shopify",
-      "Hotjar",
-      "Google Analytics",
-    ],
-    coverImage: "/ecommerce-redesign-cover.png",
-    thumbnailImage: "/modern-apparel-storefront.png",
-    gallery: [
-      { url: "/ecommerce-redesign-screen1.png", caption: "Homepage Design" },
-      {
-        url: "/ecommerce-redesign-screen2.png",
-        caption: "Product Category Page",
-      },
-      {
-        url: "/ecommerce-redesign-screen3.png",
-        caption: "Product Detail Page",
-      },
-      { url: "/ecommerce-redesign-screen4.png", caption: "Checkout Process" },
-    ],
-    client: "Fashion Retailer Inc.",
-    timeline: "6 months (Q1-Q2 2022)",
-    role: "Lead UX Designer",
-    liveUrl: "https://example.com/fashion-retailer",
-    relatedProjects: [
-      {
-        slug: "job-finder-app",
-        title: "Job Finder App",
-        category: "Mobile App",
-        image: "/modern-finance-app.png",
-      },
-      {
-        slug: "finance-dashboard",
-        title: "Finance Dashboard",
-        category: "Web Application",
-        image: "/modern-finance-overview.png",
+        slug: "gamezone",
+        title: "GameZone - Full-Stack E-commerce Platform",
+        category: "Full-Stack, E-commerce",
+        image: "/images/gamezone-cover.jpg",
       },
     ],
   },
 ];
+
 export { projects };
-// Add these functions after the projects array export
+
 export function getAllProjects() {
   return projects;
 }
+
 export function getProjectBySlug(slug) {
   return projects.find((project) => project.slug === slug);
 }
+
 export function getRelatedProjects(currentSlug, limit = 2) {
   const currentProject = getProjectBySlug(currentSlug);
+
   if (!currentProject || !currentProject.relatedProjects) {
-    // If no related projects defined, return random projects
     return projects
       .filter((project) => project.slug !== currentSlug)
       .slice(0, limit)
