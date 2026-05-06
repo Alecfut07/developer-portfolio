@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 const metaInfo = getMetaInfo();
 
 export const metadata = {
-  metadataBase: new URL("https://your-domain.com"),
+  metadataBase: new URL("https://alecortega.dev"),
   title: {
     default: "Alec Ortega Cisneros | Software Developer",
     template: "%s | Alec Ortega Cisneros",
