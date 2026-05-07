@@ -13,7 +13,7 @@ export function CredentialsSection() {
       <CardContent className="p-4 sm:p-6">
         <div className="flex items-center mb-4 sm:mb-6">
           <Award className="w-5 h-5 mr-2 text-cyan-400" />
-          <h3 className="text-lg font-medium">Credentials</h3>
+          <h3 className="text-lg font-medium">Education & Certifications</h3>
         </div>
 
         <div className="space-y-6 sm:space-y-8">
