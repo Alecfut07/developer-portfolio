@@ -12,7 +12,7 @@
     "phone": "",
     "workingHours": "PDT (UTC-7)",
     "availableForWork": true,
-    "badges": ["Frontend", "Full-Stack", "Open Source"],
+    "badges": ["Frontend", "Backend", "Full-Stack", "Open Source"],
     "social": [
       {
         "platform": "GitHub",
