@@ -42,10 +42,19 @@ const projects = [
     timeline: "-",
     role: "Full-stack developer",
     client: "Personal project",
-    githubUrl: "https://github.com/Alecfut07/gamezone-web",
+    githubRepos: [
+      {
+        label: "Frontend (React)",
+        url: "https://github.com/Alecfut07/gamezone-web",
+      },
+      {
+        label: "API (.NET)",
+        url: "https://github.com/Alecfut07/gamezone-api",
+      },
+    ],
     relatedProjects: [
       {
-        slug: "Pacific",
+        slug: "pacific",
         title: "Pacific - Industrial Products Store",
         category: "Frontend, E-commerce",
         image: "/images/pacific-cover.jpg",

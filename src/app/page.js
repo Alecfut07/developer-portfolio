@@ -80,8 +80,8 @@ export default function Home() {
               </Card>
             </AnimatedSection>
 
-            {/* Credentials Section */}
-            <AnimatedSection animation="fade-up" id="credentials">
+            {/* Education * Credentials Section */}
+            <AnimatedSection animation="fade-up" id="education">
               <CredentialsSection />
             </AnimatedSection>
 

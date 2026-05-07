@@ -74,27 +74,36 @@ export function PortfolioHeader() {
               item.href === "/"
                 ? activeSection === ""
                 : activeSection === item.href.substring(1);
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={cn(
-                  "px-3 py-2 text-sm relative group transition-all duration-300",
-                  isActive ? "text-cyan-400" : "text-zinc-400 hover:text-white",
-                )}
-              >
+
+            const className = cn(
+              "px-3 py-2 text-sm relative group transition-all duration-300",
+              isActive ? "text-cyan-400" : "text-zinc-400 hover:text-white",
+            );
+
+            const inner = (
+              <>
                 <span className="relative z-10">{item.label}</span>
-
-                {/* Hover effect - subtle background glow */}
-                <span className="absolute inset-0 bg-cyan-500/0 rounded-md group-hover:bg-cyan-500/10 transition-all duration-300"></span>
-
-                {/* Hover effect - bottom border */}
+                <span className="absolute inset-0 bg-cyan-500/0 rounded-md group-hover:bg-cyan-500/10 transition-all duration-300" />
                 <span
                   className={cn(
                     "absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 transition-all duration-300 group-hover:w-4/5",
                     isActive && "w-4/5",
                   )}
-                ></span>
+                />
+              </>
+            );
+
+            if (item.href.startsWith("#")) {
+              return (
+                <a key={item.label} href={item.href} className={className}>
+                  {inner}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={item.label} href={item.href} className={className}>
+                {inner}
               </Link>
             );
           })}
@@ -128,34 +137,54 @@ export function PortfolioHeader() {
               item.href === "/"
                 ? activeSection === ""
                 : activeSection === item.href.substring(1);
+
+            const className = cn(
+              "px-3 py-4 text-lg border-b border-zinc-800 relative group transition-all duration-300",
+              isActive
+                ? "text-cyan-400 border-cyan-400/30"
+                : "text-zinc-300 hover:text-white hober:pl-5",
+            );
+
+            const style = {
+              transitionDelay: `${index * 50}ms`,
+              transform: mobileMenuOpen ? "translateX(0)" : "translateX(20px)",
+              opacity: mobileMenuOpen ? 1 : 0,
+            };
+
+            const leftAccent = (
+              <span
+                className={cn(
+                  "absolute left-0 top-1/2 -translate-y-1/2 w-0 h-1/2 bg-gradient-to-b from-cyan-400/20 to-blue-500/20 transition-all duration-300 group-hover:w-1",
+                  isActive && "w-1",
+                )}
+              />
+            );
+
+            if (item.href.startsWith("#")) {
+              return (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={className}
+                  style={style}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  {leftAccent}
+                </a>
+              );
+            }
+
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className={cn(
-                  "px-3 py-4 text-lg border-b border-zinc-800 relative group transition-all duration-300",
-                  isActive
-                    ? "text-cyan-400 border-cyan-400/30"
-                    : "text-zinc-300 hover:text-white hover:pl-5",
-                )}
+                className={className}
+                style={style}
                 onClick={() => setMobileMenuOpen(false)}
-                style={{
-                  transitionDelay: `${index * 50}ms`,
-                  transform: mobileMenuOpen
-                    ? "translateX(0)"
-                    : "translateX(20px)",
-                  opacity: mobileMenuOpen ? 1 : 0,
-                }}
               >
                 <span className="relative z-10">{item.label}</span>
-
-                {/* Hover effect - left border accent */}
-                <span
-                  className={cn(
-                    "absolute left-0 top-1/2 -translate-y-1/2 w-0 h-1/2 bg-gradient-to-b from-cyan-400/20 to-blue-500/20 transition-all duration-300 group-hover:w-1",
-                    isActive && "w-1",
-                  )}
-                ></span>
+                {leftAccent}
               </Link>
             );
           })}
