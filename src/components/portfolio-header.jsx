@@ -13,32 +13,41 @@ export function PortfolioHeader() {
   const navItems = getNavItems();
   const personalInfo = getPersonalInfo();
 
+  const HEADER_OFFSET = 150;
+
+  const SECTION_IDS_IN_DOM_ORDER = [
+    "experience",
+    "education",
+    "skills",
+    "projects",
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      // Determine active section based on scroll position
-      const sections = navItems
-        .filter((item) => item.href.startsWith("#"))
-        .map((item) => item.href.substring(1));
-      // Find the current section in view
-      for (const section of sections.reverse()) {
-        // Check from bottom to top
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150) {
-            // If section is at or above 150px from viewport top
-            setActiveSection(section);
-            break;
-          }
+
+      let nextActive = "";
+
+      for (const sectionId of SECTION_IDS_IN_DOM_ORDER) {
+        const element = document.getElementById(sectionId);
+        if (!element) continue;
+
+        const rect = element.getBoundingClientRect();
+
+        // Section has started (its top is at or above the "scan line" under the header)
+        if (rect.top <= HEADER_OFFSET) {
+          nextActive = sectionId;
         }
       }
-      // If scrolled to top, set Home as active
-      if (window.scrollY < 100) {
-        setActiveSection("");
-      }
+
+      setActiveSection(nextActive);
+
+      // Optional: only treat as "Home" when nothing has crossed the line yet
+      // (remove any old `if (window.scrollY < 100) setActiveSection("")` block)
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // initial
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [navItems]);
 
