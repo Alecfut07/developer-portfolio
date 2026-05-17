@@ -33,7 +33,9 @@ export function EnhancedProfile() {
                 src={personalInfo.avatar || "/placeholder.svg"}
                 alt={personalInfo.name}
                 fill
+                sizes="(max-width: 640px) 96px, 112px"
                 className="object-cover"
+                priority
               />
             </div>
             <div className="text-center">
