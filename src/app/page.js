@@ -8,7 +8,8 @@ import { ExperienceCard } from "@/components/experience-card";
 import { EnhancedScrollIndicator } from "@/components/enhanced-scroll-indicator";
 import { AnimatedSection } from "@/components/animated-section";
 import { EnhancedProfile } from "@/components/enhanced-profile";
-import { CredentialsSection } from "@/components/credentials-section";
+import { EducationSection } from "@/components/education-section";
+import { CertificationsSection } from "@/components/certifications-section";
 import { PortfolioHeader } from "@/components/portfolio-header";
 import {
   getExperienceInfo,
@@ -80,9 +81,14 @@ export default function Home() {
               </Card>
             </AnimatedSection>
 
-            {/* Education * Credentials Section */}
+            {/* Education Section */}
             <AnimatedSection animation="fade-up" id="education">
-              <CredentialsSection />
+              <EducationSection />
+            </AnimatedSection>
+
+            {/* Certifications Section */}
+            <AnimatedSection animation="fade-up" id="certifications">
+              <CertificationsSection />
             </AnimatedSection>
 
             {/* Skills Section */}
