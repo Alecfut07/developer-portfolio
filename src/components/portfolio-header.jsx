@@ -18,6 +18,7 @@ export function PortfolioHeader() {
   const SECTION_IDS_IN_DOM_ORDER = [
     "experience",
     "education",
+    "certifications",
     "skills",
     "projects",
   ];
