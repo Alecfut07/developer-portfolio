@@ -29,7 +29,7 @@ export function CertificationsSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-          {certifications.map((cert, index) => (
+          {previewCerts.map((cert, index) => (
             <AnimatedSection
               key={`${cert.name}-${cert.date}`}
               animation="zoom-in"
