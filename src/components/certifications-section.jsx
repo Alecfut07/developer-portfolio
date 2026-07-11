@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award } from "lucide-react";
-import { SkillTag } from "@/components/skill-tag";
 import { AnimatedSection } from "@/components/animated-section";
+import { CertificationCard } from "./certification-card";
 import { getCredentialsInfo } from "@/lib/data";
 
 export function CertificationsSection() {
@@ -16,49 +15,22 @@ export function CertificationsSection() {
           <h3 className="text-lg font-medium">Certifications</h3>
         </div>
 
-        <div className="space-y-6 sm:space-y-8">
-          <AnimatedSection animation="fade-up" delay={100}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
-              {certifications.map((cert, index) => (
-                <div
-                  key={index}
-                  className="flex items-start bg-zinc-800/30 p-2 sm:p-3 rounded-lg"
-                >
-                  {cert.logo && (
-                    <div className="relative w-10 h-10 rounded overflow-hidden mr-3 flex-shrink-0 bg-zinc-800">
-                      <Image
-                        src={cert.logo}
-                        alt={cert.issuer}
-                        fill
-                        className="object-contain p-1"
-                      />
-                    </div>
-                  )}
-                  <div>
-                    <h5 className="text-sm font-medium">{cert.name}</h5>
-                    <p className="text-xs text-zinc-400">
-                      {cert.issuer} • {cert.date}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          {skills?.length > 0 && (
-            <AnimatedSection animation="fade-up" delay={200}>
-              <div className="space-y-3">
-                <h4 className="text-sm font-medium text-zinc-400 border-b border-zinc-800 pb-2">
-                  Highlighted skills
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {skills.map((skill, index) => (
-                    <SkillTag key={index}>{skill}</SkillTag>
-                  ))}
-                </div>
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          {certifications.map((cert, index) => (
+            <AnimatedSection
+              key={`${cert.name}-${cert.date}`}
+              animation="zoom-in"
+              delay={100 * (index + 1)}
+            >
+              <CertificationCard
+                name={cert.name}
+                issuer={cert.issuer}
+                date={cert.date}
+                category={cert.category}
+                pdfUrl={cert.pdfUrl}
+              />
             </AnimatedSection>
-          )}
+          ))}
         </div>
       </CardContent>
     </Card>

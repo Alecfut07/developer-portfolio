@@ -104,14 +104,29 @@
   "credentials": {
     "certifications": [
       {
+        "name": "AWS Cloud Practitioner Essentials",
+        "issuer": "Amazon Web Services",
+        "date": "2026",
+        "category": "Cloud",
+        "pdfUrl": "/certificates/aws-cloud-practitioner-essentials.pdf"
+      },
+      {
+        "name": "Python Essentials 1",
+        "issuer": "Cisco",
+        "date": "Programming",
+        "pdfUrl": "/certificates/cisco-python-essentials-1.pdf"
+      },
+      {
         "name": "Testing Bootcamp",
         "issuer": "iTjuana",
-        "date": "2021"
+        "date": "2021",
+        "category": "Testing"
       },
       {
         "name": "Git & GitHub, Docker, NPM, React.js, HTML/CSS, OOP with JavaScript",
         "issuer": "Platzi",
-        "date": "2022"
+        "date": "2022",
+        "Category": "Software Development"
       }
     ],
     "education": [
