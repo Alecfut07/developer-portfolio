@@ -106,15 +106,18 @@
       {
         "name": "AWS Cloud Practitioner Essentials",
         "issuer": "Amazon Web Services",
-        "date": "2026",
+        "date": "7/9/2026",
         "category": "Cloud",
-        "pdfUrl": "/certificates/aws-cloud-practitioner-essentials.pdf"
+        "pdfUrl": "/certificates/aws-cloud-practitioner-essentials.pdf",
+        "thumbnailImage": "/certificates/thumbs/aws-cloud-practitioner-essentials.png"
       },
       {
         "name": "Python Essentials 1",
         "issuer": "Cisco",
-        "date": "Programming",
-        "pdfUrl": "/certificates/cisco-python-essentials-1.pdf"
+        "date": "6/7/2026",
+        "category": "Programming",
+        "pdfUrl": "/certificates/cisco-python-essentials-1.pdf",
+        "thumbnailImage": "/certificates/thumbs/cisco-python-essentials-1.png"
       },
       {
         "name": "Testing Bootcamp",

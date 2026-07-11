@@ -1,14 +1,37 @@
 "use client";
 
+import Image from "next/image";
 import { FileText, Download, Eye } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-export function CertificationCard({ name, issuer, date, category, pdfUrl }) {
+export function CertificationCard({
+  name,
+  issuer,
+  date,
+  category,
+  pdfUrl,
+  thumbnailImage,
+}) {
   return (
     <Card className="bg-zinc-800/50 border-zinc-700 overflow-hidden group hover:border-cyan-500/50 transition-all h-full flex flex-col">
-      <div className="relative h-36 sm:h-40 w-full bg-zinc-900/80 flex items-center justify-center border-b border-zinc-700">
-        <FileText className="w-12 h-12 text-cyan-400/70 group-hover:text-cyan-400 transition-colors" />
+      <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-zinc-900/80 border-b border-zinc-700">
+        {thumbnailImage ? (
+          <Image
+            src={thumbnailImage}
+            alt={`${name} certificate`}
+            fill
+            sizes="(max-width: 640px) 100vw, 300vw"
+            className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <FileText className="w-12 h-12 text-cyan-400/70 group-hover:text-cyan-400 transition-colors" />
+          </div>
+        )}
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
         {category && (
           <div className="absolute top-3 left-3 text-xs text-cyan-400 bg-zinc-900/80 px-2 py-1 rounded">
             {category}
