@@ -105,6 +105,91 @@ const projects = [
       },
     ],
   },
+  {
+    id: 3,
+    slug: "deco-portfolio",
+    title: "Ortega Reyes Remodeling and Restoration",
+    category: "Full-Stack, Business Portfolio Website",
+    shortDescription:
+      "A full-stack marketing and admin platform for a remodeling and restoration business, with a public gallery and a family-member.",
+    description: [
+      "Ortega Reyes Remodeling and Restoration is a full-stack web application built for a remodeling and restoration family business. The public site showcases services, business information, and a categorized project gallery with before/after media.",
+      "The React (Vite) frontend includes a protected admin area where authorized family members manage portfolio items, categories, services, and business details. Media workflows support image galleries, videos, and automatic thumbnail generation.",
+      "The Django REST framework provides public and admin APIs, custom token authentication for family members, Redis-backed response caching, PostgreSQL for production data, and Dockerized Redis for local caching.",
+    ],
+    features: [
+      "Public marketing site: hero, services, portfolio gallery, about, and contact.",
+      "Protected admin dashboard for portfolio, categories, services, and business information.",
+      "Custom FamilyMember auth with token-based login (separate from Django admin users).",
+      "Portfolio items with categories, before/after images, multi-image galleries, and videos.",
+      "Automatic image thumbnails / optimized gallery images (django-imagekit).",
+      "Redis caching for portfolio list and detail API responses.",
+      "Search and filter endpoints for the public gallery.",
+      "Frontend unit tests (Vitest) and end-to-end tests (Playwright).",
+      "Frontend production build served with Nginx; Redis via Docker Compose.",
+    ],
+    technologies: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Axios",
+      "Django",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Redis",
+      "Pillow",
+      "OpenCV",
+      "Docker",
+      "Nginx",
+      "Playwright",
+      "Vitest",
+    ],
+    coverImage: "/images/projects/deco-portfolio/deco-cover.png",
+    thumbnailImage: "/images/projects/deco-portfolio/deco-cover.png",
+    gallery: [
+      {
+        url: "/images/projects/deco-portfolio/deco-cover.png",
+        caption: "Public marketing / gallery site",
+      },
+      {
+        url: "/images/projects/deco-portfolio/deco-admin.png",
+        caption: "Admin dashboard",
+      },
+      {
+        url: "/images/projects/deco-portfolio/deco-gallery.png",
+        caption: "Portfolio gallery / before-after",
+      },
+    ],
+    timeline: "2025 - 2026",
+    role: "Full-stack developer",
+    client: "Ortega Reyes Remodeling and Restoration",
+    liveUrl: "http://68.183.111.50",
+    githubRepos: [
+      {
+        label: "Frontend (React + Vite)",
+        url: "https://github.com/Alecfut07/deco-site-frontend",
+      },
+      {
+        label: "Backend (Django API)",
+        url: "https://github.com/Alecfut07/deco-site-backend",
+      },
+    ],
+    relatedProjects: [
+      {
+        slug: "gamezone",
+        title: "GameZone - Full-Stack E-commerce Platform",
+        category: "Full-Stack, E-commerce",
+        image: "/images/gamezone-cover.jpg",
+      },
+      {
+        slug: "Pacific",
+        title: "Pacific - Industrial Products Store",
+        category: "Frontend, E-commerce",
+        image: "/images/pacific-cover.jpg",
+      },
+    ],
+  },
 ];
 
 export { projects };
