@@ -113,6 +113,23 @@ export default async function ProjectPage({ params }) {
                           </a>
                         </Button>
                       )}
+                      {project.videoUrl && (
+                        <Button
+                          asChild
+                          size="sm"
+                          variant="outline"
+                          className="text-xs sm:text-sm"
+                        >
+                          <a
+                            href={project.videoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                            Watch video
+                          </a>
+                        </Button>
+                      )}
                       {(project.githubRepos?.length > 0
                         ? project.githubRepos
                         : project.githubUrl
@@ -141,6 +158,28 @@ export default async function ProjectPage({ params }) {
                 </CardContent>
               </Card>
             </AnimatedSection>
+
+            {/* Embed Youtube Video */}
+            {project.videoEmbedUrl && (
+              <AnimatedSection animation="fade-up" delay={200}>
+                <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
+                  <CardContent className="p-4 sm:p-6">
+                    <h2 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+                      Video
+                    </h2>
+                    <div className="relative w-full aspect-video overflow-hidden rounded-lg border border-zinc-800">
+                      <iframe
+                        src={project.videoEmbedUrl}
+                        title={`${project.title} demo`}
+                        className="absolute inset-0 h-full w-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            )}
 
             {/* Project Gallery */}
             {project.gallery && project.gallery.length > 0 && (

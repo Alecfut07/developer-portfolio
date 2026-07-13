@@ -190,6 +190,64 @@ const projects = [
       },
     ],
   },
+  {
+    id: 4,
+    slug: "sdbh-xp-farm",
+    title: "SDBH XP Farm - Steam Deck Automation Bot",
+    category: "Python, Computer Vision, Automation",
+    shortDescription:
+      "A modular Python bot that farms XP in Super Dragon Ball Heroes: World Mission on Steam Deck using OpenCV and a virtual Xbox controller.",
+    description: [
+      "SDBH XP Farm is a Linux / Steam Deck automation tool that runs a full torunament → battle → reward loop without modifying game files, memory, or network traffic.",
+      "It uses OpenCV template matching against cropped UI screenshots (via mss) to detect game states, then drives a virtual Xbox 360 gamepad through Linux (evdev) so the game receives normal controller inputs.",
+      "The core is an 18-state machine with multi-cycle farming, hybrid timing (template polls + fixed waits for load screens), analog stick aim nudges, configurable tunables in config.py, and teimstamped run logs for debugging and calibration.",
+    ],
+    features: [
+      "18-state machine covering tournament setup, battle prep, and post-battle rewards.",
+      "Multi-cycle farming with optional skip of EXP item setup after the first cycle.",
+      "Virtual Xbox 360 controller via Linux UInput (evdev).",
+      "OpenCV template matching on cropped PNG UI templates.",
+      "Hybrid timing: template polling plus fixed waits for slow load screens.",
+      "Analog stick nudges for finer aim control vs full D-pad steps.",
+      "Structured logging under logs/ plus timing JSON for calibration.",
+      "Keyboard/mouse fallback path when controller mode is disabled.",
+    ],
+    technologies: [
+      "Python",
+      "OpenCV",
+      "NumPy",
+      "mss",
+      "Pillow",
+      "evdev",
+      "PyAutoGUI",
+      "Linux",
+      "Steam Deck",
+    ],
+    // YouTube thumbnail as card/cover image
+    coverImage: "https://img.youtube.com/vi/xYVPDVDLSZM/maxresdefault.jpg",
+    thumbnailImage: "https://img.youtube.com/vi/xYVPDVDLSZM/hqdefault.jpg",
+    gallery: [],
+    videoUrl: "https://www.youtube.com/watch?v=xYVPDVDLSZM",
+    videoEmbedUrl: "https://www.youtube.com/embed/xYVPDVDLSZM",
+    timeline: "2026",
+    role: "Solo developer",
+    client: "Personal project",
+    githubUrl: "https://github.com/Alecfut07/sdbh-xp-farm",
+    relatedProjects: [
+      {
+        slug: "deco-portfolio",
+        title: "Ortega Reyes Remodeling and Restoration",
+        category: "Full-Stack, Business Portfolio Website",
+        image: "/images/projects/deco-portfolio/deco-cover.png",
+      },
+      {
+        slug: "gamezone",
+        title: "GameZone - Full-Stack E-commerce Platform",
+        category: "Full-Stack, E-commerce",
+        image: "/images/gamezone-cover.jpg",
+      },
+    ],
+  },
 ];
 
 export { projects };
