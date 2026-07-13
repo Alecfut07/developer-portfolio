@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialLinks } from "@/components/social-links";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -14,6 +15,7 @@ import {
   Languages,
   Clock,
   Briefcase,
+  FileText,
 } from "lucide-react";
 import { getPersonalInfo, getAboutInfo } from "@/lib/data";
 
@@ -86,6 +88,17 @@ export function EnhancedProfile() {
               >
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                 Contact
+              </TabsTrigger>
+              <TabsTrigger
+                value="resume"
+                className={`flex-1 rounded-none border-b-2 px-2 sm:px-4 py-2 text-xs sm:text-sm ${
+                  activeTab === "resume"
+                    ? "border-cyan-400 text-cyan-400"
+                    : "border-transparent text-zinc-400"
+                }`}
+              >
+                <FileText className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
+                Resume / CV
               </TabsTrigger>
             </TabsList>
           </div>
@@ -194,6 +207,46 @@ export function EnhancedProfile() {
                 </div>
               </div>
             </div>
+          </TabsContent>
+
+          <TabsContent
+            value="resume"
+            className="p-4 sm:p-6 space-y-4 focus:outline-none"
+          >
+            <div className="space-y-3">
+              <h3 className="text-sm font-medium text-zinc-400 flex items-center">
+                <FileText className="w-4 h-4 mr-2 text-cyan-400" />
+                Resume / CV
+              </h3>
+              <p className="text-sm text-zinc-300">
+                Download or preview my latest resume as a PDF.
+              </p>
+            </div>
+
+            {personalInfo.resumeUrl ? (
+              <div className="flex flex-wrap gap-2">
+                <Button asChild size="sm" variant="outline" className="text-xs">
+                  <a
+                    href={personalInfo.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Preview
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className="text-xs bg-cyan-600 hover:bg-cyan-500"
+                >
+                  <a href={personalInfo.resumeUrl} download>
+                    Download PDF
+                  </a>
+                </Button>
+              </div>
+            ) : (
+              <p className="text-xs text-zinc-500">Resume coming soon.</p>
+            )}
           </TabsContent>
         </Tabs>
 

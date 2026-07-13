@@ -13,6 +13,7 @@
     "workingHours": "PDT (UTC-7)",
     "availableForWork": true,
     "badges": ["Frontend", "Backend", "Full-Stack", "Open Source"],
+    "resumeUrl": "/resume/ResumeAlecOrtega2026.pdf",
     "social": [
       {
         "platform": "GitHub",
