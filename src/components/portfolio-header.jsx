@@ -152,7 +152,7 @@ export function PortfolioHeader() {
               "px-3 py-4 text-lg border-b border-zinc-800 relative group transition-all duration-300",
               isActive
                 ? "text-cyan-400 border-cyan-400/30"
-                : "text-zinc-300 hover:text-white hober:pl-5",
+                : "text-zinc-300 hover:text-white hover:pl-5",
             );
 
             const style = {

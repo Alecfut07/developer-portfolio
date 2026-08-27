@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { CertificationCard } from "@/components/certification-card";
 import { PortfolioHeader } from "@/components/portfolio-header";
+import { SiteFooter } from "@/components/site-footer";
 import { getCredentialsInfo } from "@/lib/data";
 
 export const metadata = {
@@ -14,7 +15,7 @@ export default function CertificationsPage() {
   const { certifications } = getCredentialsInfo();
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:20px_20px] opacity-20 z-0" />
       <PortfolioHeader />
 
@@ -27,10 +28,14 @@ export default function CertificationsPage() {
           Back to Portfolio
         </Link>
 
-        <Card>
-          <CardContent>
-            <h1>Certifications</h1>
-            <p>Professional certifications and training credentials.</p>
+        <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
+          <CardContent className="p-4 sm:p-6">
+            <h1 className="font-heading text-3xl sm:text-4xl font-bold tracking-tight">
+              Certifications
+            </h1>
+            <p className="mt-2 text-sm sm:text-base text-zinc-400">
+              Professional certifications and training credentials.
+            </p>
 
             <section className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {certifications.map((cert) => (
@@ -48,6 +53,8 @@ export default function CertificationsPage() {
           </CardContent>
         </Card>
       </div>
+
+      <SiteFooter />
     </main>
   );
 }

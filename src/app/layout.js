@@ -1,11 +1,15 @@
-import { Inter } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { ScrollProgressIndicator } from "@/components/scroll-progress-indicator";
 import { AnimationProvider } from "@/contexts/animation-context";
 import { getMetaInfo } from "@/lib/data";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
 const metaInfo = getMetaInfo();
 
 export const metadata = {
@@ -37,8 +41,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+    >
+      <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <AnimationProvider>
             <ScrollProgressIndicator />

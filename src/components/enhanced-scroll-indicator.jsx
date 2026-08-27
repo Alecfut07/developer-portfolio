@@ -59,7 +59,7 @@ export function EnhancedScrollIndicator() {
               cy="20"
               r="18"
               fill="none"
-              stroke="#27272a"
+              stroke="hsl(var(--border))"
               strokeWidth="2"
               className="sm:hidden"
             />
@@ -68,7 +68,7 @@ export function EnhancedScrollIndicator() {
               cy="24"
               r="20"
               fill="none"
-              stroke="#27272a"
+              stroke="hsl(var(--border))"
               strokeWidth="2"
               className="hidden sm:block"
             />
@@ -98,8 +98,8 @@ export function EnhancedScrollIndicator() {
             />
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#06b6d4" />
-                <stop offset="100%" stopColor="#3b82f6" />
+                <stop offset="0%" stopColor="hsl(var(--primary))" />
+                <stop offset="100%" stopColor="hsl(217 91% 60%)" />
               </linearGradient>
             </defs>
           </svg>

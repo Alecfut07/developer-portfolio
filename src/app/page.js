@@ -11,11 +11,10 @@ import { EnhancedProfile } from "@/components/enhanced-profile";
 import { EducationSection } from "@/components/education-section";
 import { CertificationsSection } from "@/components/certifications-section";
 import { PortfolioHeader } from "@/components/portfolio-header";
-import {
-  getExperienceInfo,
-  getTechnicalSkillsInfo,
-  getPersonalInfo,
-} from "@/lib/data";
+import { HeroSection } from "@/components/hero-section";
+import { SectionHeader } from "@/components/section-header";
+import { SiteFooter } from "@/components/site-footer";
+import { getExperienceInfo, getTechnicalSkillsInfo } from "@/lib/data";
 
 const SkillTagComponent = ({ children }) => {
   return (
@@ -29,17 +28,19 @@ export default function Home() {
   const projects = getAllProjects();
   const experienceInfo = getExperienceInfo();
   const technicalSkills = getTechnicalSkillsInfo();
-  const personalInfo = getPersonalInfo();
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Background Grid Pattern */}
       <div className="fixed inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:20px_20px] opacity-20 z-0"></div>
 
       {/* Header */}
       <PortfolioHeader />
 
-      <div className="relative z-10 container mx-auto p-3 sm:p-4 pt-20 sm:pt-24 pb-6 sm:pb-8">
+      {/* Hero */}
+      <HeroSection />
+
+      <div className="relative z-10 container mx-auto p-3 sm:p-4 pb-6 sm:pb-8">
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Enhanced Profile Section */}
@@ -54,10 +55,11 @@ export default function Home() {
             <AnimatedSection animation="fade-up" id="experience">
               <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
                 <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center mb-4 sm:mb-6">
-                    <BriefcaseIcon className="w-5 h-5 mr-2 text-cyan-400" />
-                    <h3 className="text-lg font-medium">Experience</h3>
-                  </div>
+                  <SectionHeader
+                    index="01"
+                    icon={BriefcaseIcon}
+                    title="Experience"
+                  />
 
                   <div className="space-y-6 sm:space-y-8">
                     {experienceInfo.map((experience, index) => (
@@ -95,10 +97,11 @@ export default function Home() {
             <AnimatedSection animation="fade-up" id="skills">
               <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
                 <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center mb-4">
-                    <CodeIcon className="w-5 h-5 mr-2 text-cyan-400" />
-                    <h3 className="text-lg font-medium">Technical Skills</h3>
-                  </div>
+                  <SectionHeader
+                    index="04"
+                    icon={CodeIcon}
+                    title="Technical Skills"
+                  />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <AnimatedSection animation="slide-right" delay={100}>
@@ -169,20 +172,21 @@ export default function Home() {
             <AnimatedSection animation="fade-up" id="projects">
               <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
                 <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center justify-between mb-4 sm:mb-6">
-                    <div className="flex items-center">
-                      <GlobeIcon className="w-5 h-5 mr-2 text-cyan-400" />
-                      <h3 className="text-lg font-medium">Recent Projects</h3>
-                    </div>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-xs sm:text-sm px-2 sm:px-3"
-                      asChild
-                    >
-                      <Link href="/projects">View All</Link>
-                    </Button>
-                  </div>
+                  <SectionHeader
+                    index="05"
+                    icon={GlobeIcon}
+                    title="Recent Projects"
+                    action={
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="text-xs sm:text-sm px-2 sm:px-3"
+                        asChild
+                      >
+                        <Link href="/projects">View All</Link>
+                      </Button>
+                    }
+                  />
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {projects.map((project, index) => (
@@ -205,19 +209,10 @@ export default function Home() {
             </AnimatedSection>
           </div>
         </div>
-
-        {/* Footer */}
-        <AnimatedSection
-          animation="fade-in"
-          delay={500}
-          className="mt-8 sm:mt-12 py-4 sm:py-6 text-center text-xs sm:text-sm text-zinc-500"
-        >
-          <p>
-            © {new Date().getFullYear()} {personalInfo.name}. All rights
-            reserved.
-          </p>
-        </AnimatedSection>
       </div>
+
+      {/* Footer */}
+      <SiteFooter />
 
       {/* Scroll to Top Button */}
       <EnhancedScrollIndicator />

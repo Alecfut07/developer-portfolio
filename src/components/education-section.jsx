@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { GraduationCap } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
+import { SectionHeader } from "@/components/section-header";
 import { getCredentialsInfo } from "@/lib/data";
 
 export function EducationSection() {
@@ -9,10 +10,7 @@ export function EducationSection() {
   return (
     <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm">
       <CardContent className="p-4 sm:p-6">
-        <div className="flex items-center mb-4 sm:mb-6">
-          <GraduationCap className="w-5 h-5 mr-2 text-cyan-400" />
-          <h3 className="text-lg font-medium">Education</h3>
-        </div>
+        <SectionHeader index="02" icon={GraduationCap} title="Education" />
 
         <div className="space-y-6 sm:space-y-8">
           {education.map((edu, index) => (

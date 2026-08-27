@@ -1,11 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { SocialLinks } from "@/components/social-links";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   User,
@@ -27,46 +24,6 @@ export function EnhancedProfile() {
   return (
     <Card className="bg-zinc-900/70 border-zinc-800 backdrop-blur-sm col-span-1 flex flex-col">
       <CardContent className="p-0">
-        {/* Profile Header - Improved mobile layout */}
-        <div className="bg-gradient-to-r from-zinc-800/50 to-zinc-900/50 p-4 sm:p-6 flex flex-col items-center border-b border-zinc-800">
-          <div className="flex flex-col sm:flex-col items-center w-full">
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden mb-4 border-2 border-cyan-400/20 ring-4 ring-zinc-800/50">
-              <Image
-                src={personalInfo.avatar || "/placeholder.svg"}
-                alt={personalInfo.name}
-                fill
-                sizes="(max-width: 640px) 96px, 112px"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="text-center">
-              <h2 className="text-xl sm:text-2xl font-bold">
-                {personalInfo.name}
-              </h2>
-              <p className="text-sm text-cyan-400 mb-1">{personalInfo.title}</p>
-              <div className="flex items-center justify-center text-xs text-zinc-400 mb-3">
-                <MapPin className="w-3 h-3 mr-1" />
-                <span>{personalInfo.location}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 justify-center mb-4">
-            {personalInfo.badges.map((badge, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="bg-zinc-800/50 hover:bg-zinc-700"
-              >
-                {badge}
-              </Badge>
-            ))}
-          </div>
-
-          <SocialLinks socialLinks={personalInfo.social} />
-        </div>
-
         {/* Tabbed Content - Mobile optimized */}
         <Tabs
           defaultValue="about"

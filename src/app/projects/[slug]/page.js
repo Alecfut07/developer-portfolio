@@ -9,6 +9,7 @@ import { getProjectBySlug } from "@/lib/projects";
 import { EnhancedScrollIndicator } from "@/components/enhanced-scroll-indicator";
 import { AnimatedSection } from "@/components/animated-section";
 import { PortfolioHeader } from "@/components/portfolio-header";
+import { SiteFooter } from "@/components/site-footer";
 
 export default async function ProjectPage({ params }) {
   const { slug } = await params;
@@ -16,7 +17,7 @@ export default async function ProjectPage({ params }) {
   if (!project) notFound();
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-background text-foreground">
       <div className="fixed inset-0 bg-[radial-gradient(#333_1px,transparent_1px)] [background-size:20px_20px] opacity-20 z-0" />
       <PortfolioHeader />
 
@@ -298,16 +299,9 @@ export default async function ProjectPage({ params }) {
             </AnimatedSection>
           </div>
         </div>
-
-        {/* Footer */}
-        <AnimatedSection
-          animation="fade-in"
-          delay={500}
-          className="mt-8 sm:mt-12 py-4 sm:py-6 text-center text-xs sm:text-sm text-zinc-500"
-        >
-          <p>© {new Date().getFullYear()} Jane Doe. All rights reserved.</p>
-        </AnimatedSection>
       </div>
+
+      <SiteFooter />
 
       <EnhancedScrollIndicator />
     </main>
