@@ -105,6 +105,14 @@
   "credentials": {
     "certifications": [
       {
+        "name": "CS50x: Introduction to Computer Science",
+        "issuer": "Harvard University",
+        "date": "2026",
+        "category": "Computer Science",
+        "pdfUrl": "/certificates/CS50x.pdf",
+        "thumbnailImage": "/certificates/thumbs/CS50x.png"
+      },
+      {
         "name": "AWS Cloud Practitioner Essentials",
         "issuer": "Amazon Web Services",
         "date": "7/9/2026",
@@ -130,7 +138,7 @@
         "name": "Git & GitHub, Docker, NPM, React.js, HTML/CSS, OOP with JavaScript",
         "issuer": "Platzi",
         "date": "2022",
-        "Category": "Software Development"
+        "category": "Software Development"
       }
     ],
     "education": [
